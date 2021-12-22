@@ -3,12 +3,9 @@
 include("../../config.php");
 
 // cek apakah tombol daftar sudah diklik atau blum?
-if(isset($_POST['simpan'])){
+if(isset($_POST['tambah'])){
 
     // ambil data dari formulir
-    $id = $_POST['id'];
-   // $foto = isset($_POST['foto']['name']) ? $_POST['foto']['name'] : 'x';
-   // $tmp = isset($_POST['foto']['tmp_name']) ? $_POST['foto']['tmp_name'] : 'x';
     
     $mata_pelajaran = $_POST['mata_pelajaran'];
     $hari = $_POST['hari'];
@@ -17,11 +14,9 @@ if(isset($_POST['simpan'])){
     $ruangan = $_POST['ruangan'];
 
 
-    
-    // Set path folder tempat menyimpan fotonya
-    
+
     // buat query
-    $sql = "UPDATE jadwal SET mata_pelajaran='$mata_pelajaran', hari='$hari', jam_mulai='$jam_mulai', jam_selesai='$jam_selesai', ruangan='$ruangan' WHERE id=$id";
+    $sql = "INSERT INTO jadwal (mata_pelajaran, hari, jam_mulai, jam_selesai, ruangan) VALUE ('$mata_pelajaran', '$hari', '$jam_mulai', '$jam_selesai', '$ruangan')";
     $query = mysqli_query($db, $sql);
 
     // apakah query simpan berhasil?

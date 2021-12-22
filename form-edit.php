@@ -56,7 +56,7 @@ if( mysqli_num_rows($query) < 1 ){
 <div class="container shadow py-4 mt-5">
 
             <div class="p-5 mb-4 bg-light rounded-3 height: 4rem">
-                    <h3 class="display-7 fw-bold">Formulir Edit data siswa</h3>
+                    <h3 class="display-7 fw-bold"> Formulir Edit data siswa</h3>
             </div>
 
     <form action="proses-edit.php" method="POST" enctype="multipart/form-data">

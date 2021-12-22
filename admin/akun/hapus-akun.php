@@ -8,15 +8,15 @@ if( isset($_GET['id']) ){
     $id = $_GET['id'];
 
     // buat query hapus
-    $sql = "DELETE FROM jadwal WHERE id=$id";
+    $sql = "DELETE FROM admin WHERE id=$id";
     $query = mysqli_query($db, $sql);
 
     // apakah query hapus berhasil?
     if( $query ){
-        header('Location: pelajaran-admin.php?status=sukses');
+        header('Location: list-akun.php?status=sukses');
         
     } else {
-        header('Location: pelajaran-admin.php?status=gagal');
+        header('Location: list-akun.php?status=gagal');
     }
 
 } else {

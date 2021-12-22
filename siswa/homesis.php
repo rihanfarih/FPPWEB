@@ -42,17 +42,20 @@ $getData = mysqli_query($db, "SELECT * FROM mhs");
             <div class="p-1 mb-4 bg-light rounded-3">
                 <div class="container-fluid py-1">
                     
-                    <p>Selamat datang <b><?php echo $_SESSION['nama']; ?></b> di halaman akses mahasiswa</p>
+                    <p>Selamat datang <b><?php echo $_SESSION['nama']; ?></b> di halaman akses <b>mahasiswa</b></p>
                     
                 </div>
             </div>
 
             <div class="row align-items-md-stretch">
-                    <div class="col-md-6">
+                <div class="col-md-6">
+                    
                     <div class="h-100 p-5 bg-light border rounded-3">
-                        <h2>Lihat Jadwal Pelajaran</h2>
-                        <p>Klik disini untuk melihat Jadwal Pelajaran</p>
-                        <a href="jadwalpelajaran.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
+                        
+                            <h2>Lihat Jadwal Pelajaran</h2>
+                            <p>Klik disini untuk melihat Jadwal Pelajaran</p>
+                            <a href="jadwalpelajaran.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
+                        
                     </div>
                 </div>
 

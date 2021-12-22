@@ -71,7 +71,14 @@
             ?>
 
         </tbody>
+
         </table>
+
+        <a href="cetak.php">
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="button">Cetak Jadwal</button>
+            </div>
+         </a>
 
         <p>Total: <?php echo mysqli_num_rows($query) ?></p>
     

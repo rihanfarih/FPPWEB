@@ -48,7 +48,48 @@ $getData = mysqli_query($db, "SELECT * FROM mhs");
                 </div>
             </div>
 
-            <div class="row align-items-md-stretch">
+            <div class="row align-items-md-stretch mt-5">
+
+                <div class="col-md-3 text-center">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <h2><?php echo mysqli_num_rows(mysqli_query($db, "SELECT * FROM jadwal")) ?> </h2>
+                        <p>Jumlah Pelajaran</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <h2><?php echo mysqli_num_rows(mysqli_query($db, "SELECT * FROM admin")) ?> </h2>
+                        <p>Jumlah akun terdaftar </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <?php  
+                        $result = mysqli_query($db, "SELECT AVG(AVG_TUGAS) AS avg FROM sql_nilai");
+                        $row = mysqli_fetch_assoc($result);
+                        ?>
+                        
+                        <h2><?php echo $row['avg']; ?> </h2>
+                        <p>Rata- Rata nilai Tugas </p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 text-center">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                    <?php  
+                        $result = mysqli_query($db, "SELECT AVG(QUIZ_3) AS avg FROM sql_nilai");
+                        $row = mysqli_fetch_assoc($result);
+                        ?>
+                        
+                        <h2><?php echo $row['avg']; ?> </h2>
+                        <p>Rata- Rata nilai Quiz </p>
+                    </div>
+                </div>
+
+
+                <div class="row align-items-md-stretch mt-4">
                     <div class="col-md-6">
                     <div class="h-100 p-5 bg-light border rounded-3">
                         <h2 class="bi-calendar-date"> Manage Jadwal Pelajaran</h2>
@@ -65,24 +106,8 @@ $getData = mysqli_query($db, "SELECT * FROM mhs");
                     </div>
                 </div>
              </div>
-        
 
-        <div class="row align-items-md-stretch mt-5">
-                    <div class="col-md-6">
-                    <div class="h-100 p-5 bg-light border rounded-3">
-                        <h2>coming soon </h2>
-                        <p>...............</p>
-                        <a href="form-daftar.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
-                    </div>
-                </div>
 
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-light border rounded-3">
-                    <h2 class="bi-easel">coming soon</h2>
-                    <p>..........</p>
-                    <a href="list-siswa.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
-                    </div>
-                </div>
              </div>
         </div>
 

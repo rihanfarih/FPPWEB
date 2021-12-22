@@ -9,98 +9,86 @@ $getData = mysqli_query($db, "SELECT * FROM mhs");
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
-<html lang="en">
-
+<html>
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
-    <title>Home Page</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
+<title>Laman Siswa | SMK Coding </title>
 </head>
 
 <body>
-    <div class="card">
-        <div class="card-header">
-            <h3 class="card-title">
-                Data Mahasiswa
-                <div style="margin-left: 10px; float:right;">
-                    <a href="../logout.php">
-                        <button type="button" class="btn btn-danger">Logout</button>
-                    </a>
-                </div>
-                <div style="float:right;">
-                    <a href="chart.php">
-                        <button type="button" class="btn btn-success">Chart</button>
-                    </a>
-                </div>
-            </h3>
-            <p>Selamat datang <b><?php echo $_SESSION['nama']; ?></b> di halaman data mahasiswa</p>
-        </div>
-        <!-- /.card-header -->
-        <div class="card-body">
-            <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
-                <div class="row">
-                    <div class="col-sm-12 col-md-6"></div>
-                    <div class="col-sm-12 col-md-6"></div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12">
-                        <table id="example2" class="table table-dark table-striped" aria-describedby="example2_info">
-                            <thead>
-                                <tr>
-                                    <th class="sorting sorting_asc" tabindex="0" aria-controls="example2" rowspan="1"
-                                        colspan="1" aria-label="Rendering engine: activate to sort column descending"
-                                        aria-sort="ascending">
-                                        Id
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                        aria-label="Browser: activate to sort column ascending">
-                                        Name
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                        aria-label="Platform(s): activate to sort column ascending">
-                                        Email
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                        aria-label="Engine version: activate to sort column ascending">
-                                        Gender
-                                    </th>
-                                    <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1"
-                                        aria-label="Engine version: activate to sort column ascending">
-                                        GPA
-                                    </th>
+    <main>
+        <div class="container py-4">
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                while ($i = mysqli_fetch_array($getData)) {
-                                    echo
-                                    "<tr class='odd'>
-                                            <td>$i[id]</td>
-                                            <td>$i[nama]</td>
-                                            <td>$i[email]</td>
-                                            <td>$i[gender]</td>
-                                            <td>$i[ipk]</td>
-                                    </tr>";
-                                }
-                                ?>
-                            </tbody>
-                        </table>
+            <header class="pb-3 mb-4 border-bottom">
+                <div class="row">
+                    <div class="col">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-book-half" viewBox="0 0 16 16">
+                            <path d="M8.5 2.687c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
+                        </svg>
+                        <span class="fs-4">Sistem Sekolah | SMK Coding</span>
+                    </div>
+                    <div class="col">
+                    <a class="dropdown-item text-end " href="../logout.php">
+                    <button type="button" class="btn btn-danger">Logout <?php echo $_SESSION['nama']; ?></button>
+                            </a>
                     </div>
                 </div>
+            </header>
+            
+
+
+            <div class="p-1 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-1">
+                    
+                    <p>Selamat datang <b><?php echo $_SESSION['nama']; ?></b> di halaman akses <b>admin</b></p>
+                    
+                </div>
             </div>
+
+            <div class="row align-items-md-stretch">
+                    <div class="col-md-6">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <h2 class="bi-calendar-date"> Manage Jadwal Pelajaran</h2>
+                        <p>Klik disini untuk mengatur Jadwal Pelajaran</p>
+                        <a href="./jadwal/pelajaran-admin.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2 class="bi-key"> Manage Akun</h2>
+                    <p>Klik disini untuk mengatur Akun</p>
+                    <a href="./akun/list-akun.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
+                    </div>
+                </div>
+             </div>
+        
+
+        <div class="row align-items-md-stretch mt-5">
+                    <div class="col-md-6">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                        <h2>coming soon </h2>
+                        <p>...............</p>
+                        <a href="form-daftar.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2 class="bi-easel">coming soon</h2>
+                    <p>..........</p>
+                    <a href="list-siswa.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
+                    </div>
+                </div>
+             </div>
         </div>
-        <!-- /.card-body -->
-    </div>
+
+    </main>
+
+   
+
 </body>
-
-</html>
-
 </html>

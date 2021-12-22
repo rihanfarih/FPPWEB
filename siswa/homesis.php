@@ -71,7 +71,7 @@ $getData = mysqli_query($db, "SELECT * FROM mhs");
                     <div class="h-100 p-5 bg-light border rounded-3">
                         <h2>Assignment Submission</h2>
                         <p>Klik disini untuk Mengumpulkan Tugas</p>
-                        <a href="form-daftar.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
+                        <a href="assignment.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
                     </div>
                 </div>
 

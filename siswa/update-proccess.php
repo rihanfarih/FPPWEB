@@ -42,11 +42,6 @@ if (isset($_POST['update'])) {
             header('Location: profile.php?status=success');
         }
     }
-    // if ($query1 && $query2) {
-
-    // } else {
-    //     header('Location: profile.php?status=gagal');
-    // }
 } else {
     die("Akses dilarang...");
 }

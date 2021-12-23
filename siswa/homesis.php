@@ -54,44 +54,39 @@ $getData = mysqli_query($db, "SELECT * FROM mhs");
             </div>
 
             <div class="row align-items-md-stretch">
-                <div class="col-md-6">
+                <div class="col-md-4">
 
-                    <div class="h-100 p-5 bg-light border rounded-3">
-
-                        <h2 class="bi-calendar-date"> Lihat Jadwal Pelajaran</h2>
-                        <p>Klik disini untuk melihat Jadwal Pelajaran</p>
+                    <div class="h-100 p-5 bg-light border rounded-3 text-center">
+                        <h1 class="bi-calendar-date"> </h1>
+                        <h2 > Lihat Jadwal Pelajaran</h2>
+                        <p >Klik disini untuk melihat Jadwal Pelajaran</p>
                         <a href="jadwalpelajaran.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
 
                     </div>
                 </div>
 
-                <div class="col-md-6 ">
-                    <div class="h-100 p-5 bg-light border rounded-3 ">
-                        <h2 class="bi-graph-up"> Lihat Nilai</h2>
+                <div class="col-md-4 ">
+                    <div class="h-100 p-5 bg-light border rounded-3 text-center">
+                        <h1 class="bi-graph-up"> </h1>
+                        <h2> Lihat Nilai</h2>
                         <p>Klik disini untuk melihat nilai</p>
                         <a href="nilai.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
                     </div>
                 </div>
-            </div>
 
 
-            <div class="row align-items-md-stretch mt-5">
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-light border rounded-3">
-                        <h2 class="bi-clipboard-check"> Assignment Submission</h2>
+                <div class="col-md-4">
+                    <div class="h-100 p-5 bg-light border rounded-3 text-center">
+                         <h1 class="bi-clipboard-check"> </h1>
+                        <h2> Assignment Submission</h2>
                         <p>Klik disini untuk Mengumpulkan Tugas</p>
                         <a href="assignment.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
                     </div>
                 </div>
-
-                <div class="col-md-6">
-                    <div class="h-100 p-5 bg-light border rounded-3">
-                        <h2 class="bi-easel"> Study Material</h2>
-                        <p>Klik disini untuk melihat meteri pelajaran</p>
-                        <a href="list-siswa.php" class="btn btn-outline-secondary" type="button">Klik disini</a>
-                    </div>
-                </div>
             </div>
+
+
+            
         </div>
 
     </main>

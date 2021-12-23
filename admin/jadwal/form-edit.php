@@ -1,6 +1,6 @@
 <?php
 
-include("config.php");
+include("../../config.php");
 
 // kalau tidak ada id di query string
 if( !isset($_GET['id']) ){
@@ -11,7 +11,7 @@ if( !isset($_GET['id']) ){
 $id = $_GET['id'];
 
 // buat query untuk ambil data dari database
-$sql = "SELECT * FROM calon_siswa WHERE id=$id";
+$sql = "SELECT * FROM jadwal WHERE id=$id";
 $query = mysqli_query($db, $sql);
 $siswa = mysqli_fetch_assoc($query);
 
@@ -44,7 +44,7 @@ if( mysqli_num_rows($query) < 1 ){
                             <span class="fs-4">Pendaftaran Siswa Baru | SMK Coding</span>
                         </div>
                         <div class="col">
-                            <a class="dropdown-item text-end " href="index.php">
+                            <a class="dropdown-item text-end " href="../home.php">
                                 <i class="bi bi-arrow-left-circle-fill me-2"></i>
                                 Kembali menu utama
                             </a>
@@ -56,7 +56,7 @@ if( mysqli_num_rows($query) < 1 ){
 <div class="container shadow py-4 mt-5">
 
             <div class="p-5 mb-4 bg-light rounded-3 height: 4rem">
-                    <h3 class="display-7 fw-bold"> Formulir Edit data siswa</h3>
+                    <h3 class="display-7 fw-bold">Formulir Edit data Pelajaran</h3>
             </div>
 
     <form action="proses-edit.php" method="POST" enctype="multipart/form-data">
@@ -66,42 +66,28 @@ if( mysqli_num_rows($query) < 1 ){
             <input type="hidden" name="id" value="<?php echo $siswa['id'] ?>" />
 
             <div class="form-group">
-                <label>Nama:</label>
-                <input type="text" name="nama" class="form-control" value="<?php echo $siswa['nama']; ?>" placeholder="nama lengkap" required />
+                <label>mata pelajaran</label>
+                <input type="text" name="mata_pelajaran" class="form-control" value="<?php echo $siswa['mata_pelajaran']; ?>" placeholder="mata_pelajaran" required />
             </div>
 
             <div class="form-group">
-                <label>Alamat:</label>
-                <textarea name="alamat" class="form-control" rows="5" placeholder="Masukan Alamat" required><?php echo $siswa['alamat']; ?></textarea>
+                <label>hari</label>
+                <input type="text" name="hari" class="form-control" value="<?php echo $siswa['hari']; ?>" placeholder="hari" required />
             </div>
 
-            <p>
-            <label for="jenis_kelamin">Jenis Kelamin: </label>
-            <?php $jk = $siswa['jenis_kelamin']; ?>
-            <label><input type="radio" name="jenis_kelamin" value="laki-laki" <?php echo ($jk == 'laki-laki') ? "checked": "" ?>> Laki-laki</label>
-            <label><input type="radio" name="jenis_kelamin" value="perempuan" <?php echo ($jk == 'perempuan') ? "checked": "" ?>> Perempuan</label>
-        </p>
-        <p>
-            <label for="agama">Agama: </label>
-            <?php $agama = $siswa['agama']; ?>
-            <select name="agama">
-                <option <?php echo ($agama == 'Islam') ? "selected": "" ?>>Islam</option>
-                <option <?php echo ($agama == 'Kristen') ? "selected": "" ?>>Kristen</option>
-                <option <?php echo ($agama == 'Hindu') ? "selected": "" ?>>Hindu</option>
-                <option <?php echo ($agama == 'Budha') ? "selected": "" ?>>Budha</option>
-                <option <?php echo ($agama == 'Atheis') ? "selected": "" ?>>Atheis</option>
-            </select>
-        </p>
-
-            <div class="form-group mb-3">
-                <label>Sekolah Asal:</label>
-                <input type="text" name="sekolah_asal" class="form-control" value="<?php echo $siswa['sekolah_asal']; ?>" placeholder="Masukan Sekolah Asal" required />
-               
+            <div class="form-group">
+                <label>jam_mulai:</label>
+                <input type="text" name="jam_mulai" class="form-control" value="<?php echo $siswa['jam_mulai']; ?>" placeholder="jam_mulai" required />
             </div>
 
-            <div class="foto mb-3">
-                <label for="foto" class="form-label">Masukkan Foto</label>
-                <input class="form-control" name="foto" type="file" id="foto">
+            <div class="form-group">
+                <label>jam_selesai:</label>
+                <input type="text" name="jam_selesai" class="form-control" value="<?php echo $siswa['jam_selesai']; ?>" placeholder="jam_selesai" required />
+            </div>
+
+            <div class="form-group">
+                <label>ruangan:</label>
+                <input type="text" name="ruangan" class="form-control" value="<?php echo $siswa['ruangan']; ?>" placeholder="ruangan lengkap" required />
             </div>
 
         <p>

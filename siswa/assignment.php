@@ -4,7 +4,7 @@
 <html>
 
 <head>
-    <title>Pendaftaran Siswa Baru | SMK Coding</title>
+    <title>SMK Coding</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -29,62 +29,32 @@
             </div>
         </div>
     </header>
-
-
-
     <br>
+    <form action="kumpul.php" method="POST" enctype="multipart/form-data">
+        <fieldset>
 
-    <div class="container shadow py-4 mt-5">
-
-
-        <div class="p-5 mb-4 bg-light rounded-3 height: 4rem">
-
-            <h3 class="display-7 bi bi-calendar-date"> Jadwal Pelajaran</h3>
-        </div>
-
-        <table class="table table-striped text-center ">
-            <thead>
-                <tr>
-                    <th>mata pelajaran</th>
-                    <th>hari</th>
-                    <th>jam mulai</th>
-                    <th>jam selesai</th>
-                    <th>ruangan</th>
-
-                </tr>
-            </thead>
-            <tbody>
-
-                <?php
-                $sql = "SELECT * FROM jadwal";
-                $query = mysqli_query($db, $sql);
-
-                while ($siswa = mysqli_fetch_array($query)) {
-                    echo "<tr>";
-
-                    echo "<td>" . $siswa['mata_pelajaran'] . "</td>";
-                    echo "<td>" . $siswa['hari'] . "</td>";
-                    echo "<td>" . $siswa['jam_mulai'] . "</td>";
-                    echo "<td>" . $siswa['jam_selesai'] . "</td>";
-                    echo "<td>" . $siswa['ruangan'] . "</td>";
-                    echo "</tr>";
-                }
-                ?>
-
-            </tbody>
-
-        </table>
-
-        <a href="cetak.php">
-            <div class="d-grid gap-2">
-                <button class="btn btn-primary" type="button">Cetak Jadwal</button>
+            <div class="container shadow py-4 mt-5">
+                <div class="p-5 mb-4 bg-light rounded-3 height: 4rem">
+                    <h3 class="display-7 ">Formulir Submisi Tugas</h3>
+                </div>
+                <p>
+                    <label for="pelajaran">Pelajaran: </label>
+                    <select name="pelajaran">
+                        <option>Matematika</option>
+                        <option>Fisika</option>
+                        <option>Kimia</option>
+                    </select>
+                </p>
+                <p>
+                    <label for="tugas">Tugas: </label>
+                    <select name="tugas">
+                        <option>Tugas satu</option>
+                    </select>
+                </p>
+                <p>
+                    <input type="submit" value="pilih" name="pilih" />
+                </p>
             </div>
-        </a>
-
-        <p>Total: <?php echo mysqli_num_rows($query) ?></p>
-
-    </div>
-
+        </fieldset>
+    </form>
 </body>
-
-</html>

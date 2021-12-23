@@ -13,7 +13,9 @@ if (isset($_POST['login'])) {
         $level = $get['level'];
         // var_dump($level);
         $nama = $get['nama_admin'];
+        $id = $get['id'];
         // var_dump($nama);
+        $_SESSION['id'] = $id;
         $_SESSION['nama'] = $nama;
         $_SESSION['login_in'] = $email;
         if ($level == "admin") {
@@ -23,8 +25,8 @@ if (isset($_POST['login'])) {
             echo "<script type='text/javascript'>alert('selamat datang $level');location.href = \"siswa/homesis.php\"</script>";
         }
     } else {
-       // echo "<script type='text/javascript'>alert('Login gagal, username atau password salah!');location.href = \"halog.php\"</script>";
-       header('Location: halog.php?status=gagal');
+        // echo "<script type='text/javascript'>alert('Login gagal, username atau password salah!');location.href = \"halog.php\"</script>";
+        header('Location: halog.php?status=gagal');
     }
 } else {
     echo "<script type='text/javascript'>alert('Anda tidak diperkenankan masuk ke halaman ini!');location.href = \"index.php\"</script>";

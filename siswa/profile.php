@@ -49,8 +49,11 @@ $arrmhs = mysqli_fetch_array($mhs);
         </header>
         <div class="p-1 mb-4 bg-light rounded-3">
             <div class="container-fluid py-1">
-
-                <p>Selamat datang <b><?php echo $_SESSION['nama']; ?></b> di halaman profil mahasiswa</p>
+                            <a class="dropdown-item text-end " href="homesis.php">
+                                <i class="bi bi-arrow-left-circle-fill me-2"></i>
+                                Kembali menu utama
+                            </a>
+                
 
             </div>
         </div>
